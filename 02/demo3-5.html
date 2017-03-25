@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es6 创建组件</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel"> 
+         class HelloComponent extends React.Component{
+           constructor(){
+              super();
+              this.state={
+                hours:0,
+                seconds:0,
+                minutes:0
+              }
+  
+                 var _this=this;
+              setInterval(function(){
+                 _this.showTime();
+              },1000);
+           }
+
+            componentDidMount(){ //不显示0:0:0
+               this.showTime();
+            }
+            
+              showTime(){
+                var myDate=new Date();
+                this.setState({
+                   hours:myDate.getHours()<10?"0"+myDate.getHours():myDate.getHours(),
+                   seconds:myDate.getSeconds()<10?"0"+myDate.getSeconds():myDate.getSeconds(),
+                   minutes:myDate.getMinutes()<10?"0"+myDate.getMinutes():myDate.getMinutes()
+                });
+              }
+
+              render(){
+                 return <div>
+                       <span>{this.state.hours}</span>:
+                       <span>{this.state.minutes}</span>:
+                       <span>{this.state.seconds}</span>
+                 </div>
+              }
+           
+         }
+
+         ReactDOM.render(
+            <HelloComponent />,
+            document.getElementById("div1")
+         );
+      </script>
+</body>
+</html>

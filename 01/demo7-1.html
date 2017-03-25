@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>htmlFor</title>
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script type="text/javascript" src="js/browser.min.js"></script>
+  <style>
+     label{
+      font-size:14px;
+      font-family: 微软雅黑;
+     }
+  </style>
+</head>
+<body> 
+	<div id="div1"></div>
+	    <script type="text/babel">
+	      var div=<div>
+          <label htmlFor="userName">用户名:</label>
+             <input type="text" id="userName" />         
+          </div>;
+          ReactDOM.render(         
+              div,
+              document.getElementById("div1")
+          	);
+   	
+    </script>
+</body>
+</html>

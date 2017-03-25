@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es6</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel"> 
+        //创建Person类      
+        class Person{
+          constructor(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+          }
+          showInfo(){
+            alert("姓名"+this.name+"\n"+"年龄"+this.age+"\n"+"性别"+this.sex);
+          }
+        }
+        
+        //创建Student类，继承Person类属性及方法
+        class Student extends Person{
+          constructor(name,age,sex,sno,address){
+            super(name,age,sex); //调用父类的构造函数
+            this.sno=sno;
+            this.address=address;
+          }
+          study(){
+            alert("好好学习，天天向上");
+          }
+        }
+        //创建Student的实例
+        var stu1=new Student("Tom",19,"男","10001","北京海淀区");
+        alert(stu1.name); //继承的属性
+        alert(stu1.sno); //自身属性
+        stu1.showInfo();//继承方法
+        stu1.study(); //自身方法
+        console.dir(stu1);
+      </script>
+</body>
+</html>

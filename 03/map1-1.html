@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">  
+	    class TextComponent extends React.Component{
+		  constructor(){
+			 super();
+			 this.state={
+				   names:[1,2,3]
+				 } 
+		  }	
+		  componentDidMount(){
+			  
+			 this.setState({
+				names:[4,5,6] 
+				})
+			  }
+		  render(){
+			  return <div>{
+				      this.state.names.map(function(name){
+						 return <li>{name}</li>
+						  })
+				  }</div>
+			  }
+		}
+		
+		ReactDOM.render(
+		   <TextComponent />,
+		   document.getElementById("div1")
+		)
+      </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title> 
+<script type="text/javascript" src="js/react.js"></script>
+<script type="text/javascript" src="js/react-dom.js"></script>	    <script type="text/javascript" src="js/browser.min.js"></script>
+<script type="text/babel">
+ class Person{
+	constructor(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		}
+		showInfo(){
+			alert("姓名:"+this.name+"\n"+"年龄:"+this.age+"\n"+"性别:"+this.sex);
+			}
+			
+	}
+	//var s1=new Person("tom",19,"男");
+//			alert(s1.name);
+//			s1.showInfo();
+class Student extends Person{
+	constructor(name,age,sex,sno,sdept){
+		super(name,age,sex);
+		this.sno=sno;
+		this.sdept=sdept;
+		}
+		study(){
+			alert("好好学习");
+			}
+		
+	}
+	let s1=new Student("tom",19,"男","100001","cs");
+		alert(s1.name);
+		s1.showInfo();
+		alert(s1.sno);
+		s1.study();
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

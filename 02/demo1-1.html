@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>无状态组件</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+  <style>
+      label{
+        font-size:14px;
+        font-family: 微软雅黑;
+      }
+      a{
+        text-decoration: none;
+        color: #666;
+        font-size:14px;
+      }
+      .sub{
+        text-align: right;
+        width: 200px;
+      }
+  </style>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+        function LoginUser(props){
+          return <div>
+                 <label htmlFor="userName">用户名:</label>
+                 <input type="text" id="userName" />               
+             </div>
+             
+        }
+        function LoginPwd(props){
+          return <div>
+                 <label htmlFor="pwd">密&nbsp;&nbsp;&nbsp;码:</label>
+                 <input type="text" id="pwd" />               
+             </div>
+             
+        }
+        function LoginSub(props){
+          return <div className='sub'>                 
+                 <input type="button" id="btn" value="登录" />&nbsp;  
+                 <a href="reg.html">注册</a>             
+             </div>       
+            
+        }
+
+        ReactDOM.render(
+            <div>
+              <LoginUser />
+              <LoginPwd />
+              <LoginSub />
+            </div>,
+            document.getElementById("div1")
+        )
+      </script>
+</body>
+</html>

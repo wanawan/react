@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSX中数组</title>
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+	<div id="div1"></div>
+	    <script type="text/babel">
+	      var names=[
+             <h3>Tom</h3>,
+             <h3>Jarry</h3>,
+             <h3>Susan</h3>
+	      ];
+        ReactDOM.render(
+          <div>
+             {names}
+          </div>,
+          document.getElementById("div1")
+        );
+      </script>
+</body>
+</html>

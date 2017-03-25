@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es6 创建组件</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+  <style>
+    .box{
+      width:200px;
+      height: 300px;
+      background: #090;
+    }
+  </style>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel"> 
+         class HelloComponent extends React.Component{
+            constructor(props){
+              super(props);
+              this.state={
+                 display:"block"
+              }
+            }
+            handleClick(){
+              this.setState({
+                 display:this.state.display=="block"?"none":"block"
+              });
+            }
+            render(){
+              return <div>
+                  <input type="button" onClick={this.handleClick.bind(this)} value={this.props.title} />
+                  <div className='box' style={this.state}></div>
+              </div>
+            }
+         }
+
+         ReactDOM.render(
+            <HelloComponent title="显示或隐藏" />,
+            document.getElementById("div1")
+         );
+      </script>
+</body>
+</html>

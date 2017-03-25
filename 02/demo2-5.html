@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React.createClass</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+         var HelloComponent=React.createClass({
+            handleClick:function(e){ //事件处理函数,e是事件对象
+               alert("你触发了click事件");
+               alert("您输入了:"+this.refs.myInput.value); //this.refs代表当前组件中所有真实节点
+               alert(e.target.value);
+            },
+            render:function(){//ref代表当前真是DOM节点的名称
+              return  <div>
+                           <input type="text" ref="myInput" />
+                           <input type="button" onClick={this.handleClick} value="点击触发绑定的click事件" />
+                      </div>
+            }
+         });
+
+         ReactDOM.render(
+            <HelloComponent />,
+            document.getElementById("div1")
+         );
+      </script>
+</body>
+</html>

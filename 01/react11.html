@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>   </title>
+    <script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>	        <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+
+<body>
+<div id="div1"></div>
+<script type="text/babel">
+	var HelloComponent=React.createClass({  
+		getInitialState:function(){
+			alert('init');
+			return {
+				opacity:1.0,
+				fontSize:'14px',
+				color:'#fff',
+				backgroundColor:'#090'
+				}
+			},
+		render:function(){
+			return <p style={this.state}>hello</p>
+			},	
+		componentWillMount:function(){
+			alert('will');
+			},
+		/*状态改变前调用*/
+		componentDidMount:function(){
+			alert('did');
+			}
+			/*挂载后调用	*/
+		});
+		
+ReactDOM.render(
+
+<HelloComponent />,
+
+document.getElementById("div1")
+); 
+</script>
+<!--class替换成className，，for改成forHtml.-->
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+        function HelloComponent(props){
+           return <p>hello {props.name}</p>
+        }
+        ReactDOM.render(
+          <HelloComponent name="Tom" />,
+          document.getElementById("div1")
+        )
+      </script>
+</body>
+</html>

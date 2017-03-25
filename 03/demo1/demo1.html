@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+         class AjaxComponent extends React.Component{
+            constructor(){
+              super();
+              this.state={
+                name:"暂无",
+                age:18,
+                sex:"暂无"
+              }
+            }
+            componentDidMount(){
+              $.ajax({
+                url:"json.php",
+                type:"GET",
+                dataType:"json",
+                success:function(data){
+                  this.setState({
+                     name:data.name,
+                     age:data.age,
+                     sex:data.sex
+                  })
+                }.bind(this)
+              });
+            }
+
+            render(){
+                return  <ul>
+                          <li>{this.state.name}</li>
+                          <li>{this.state.age}</li>
+                          <li>{this.state.sex}</li>
+                       </ul>
+              
+            }
+         }
+
+         ReactDOM.render(
+              <AjaxComponent />,
+              document.getElementById("div1")
+         )
+      </script>
+</body>
+</html>

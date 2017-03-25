@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React.createClass</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+        var HelloComponent=React.createClass({
+             render:function(){
+                 return <p>hello: {this.props.name}</p>
+             }
+        });
+        ReactDOM.render(
+            <HelloComponent name="Tom" />,
+            document.getElementById("div1")
+        );
+      </script>
+</body>
+</html>

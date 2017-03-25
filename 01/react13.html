@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+    <script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>	        <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+
+<body>
+<div id="div1"></div>
+<script type="text/babel">
+	var HelloCom=React.createClass({
+	    handleClick:function(e){
+			alert('你触发了click事件');
+			alert(e.target.value); /*不能用this，要用js原生的写法*/
+			alert(this.refs.myText.value);
+			},
+		render:function(){
+			return <div>
+			<input type="text" ref="myText"/>
+			<input type="button" value="点我试试" onClick={this.handleClick} />
+		
+			</div>
+			}
+		});
+		
+		
+ReactDOM.render(
+
+<HelloCom />,
+
+document.getElementById("div1")
+); 
+</script>
+<!--class替换成className，，for改成forHtml.-->
+</body>
+</html>

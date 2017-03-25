@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hello world</title>
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+	<div id="div1"></div>
+	    <script type="text/babel">
+	      var name="xiaogang";
+          ReactDOM.render(         
+              <h1>
+              Hello World! 
+              {
+                 /*
+                   多行注释1
+                   多行注释2
+                   多行注释3
+                 */ 
+                  name
+                 //注释
+              }
+              </h1>,
+              document.getElementById("div1")
+          	);
+   	
+    </script>
+</body>
+</html>

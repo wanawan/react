@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React.createClass</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+        var HelloComponent=React.createClass({
+             propTypes: { //组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求
+             //PropTypes 告诉 React，这个 title 属性是必须的，而且它的值必须是字符串,否则控制台报错
+          title: React.PropTypes.string.isRequired
+        },
+             render:function(){
+                 return <p>hello: {this.props.title}</p>
+             }
+        });
+        var data=123;
+        ReactDOM.render(
+            <HelloComponent title={data} />,
+            document.getElementById("div1")
+        );
+      </script>
+</body>
+</html>

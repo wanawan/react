@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React.createClass</title>
+  <script type="text/javascript" src="js/react.js"></script>
+  <script type="text/javascript" src="js/react-dom.js"></script>
+  <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+  <div id="div1"></div>
+      <script type="text/babel">       
+        var HelloComponent=React.createClass({
+             getInitialState:function(){ //初始化状态
+                alert('init');
+                return {
+                   opacity:1.0,
+                   fontSize:'14px',
+                   color:'#fff',
+                   backgroundColor:'#090'
+                }
+             },
+             render:function(){//通过this.state 访问状态
+               return <p style={this.state}>测试哈哈</p>
+               //return <p style={{opacity:this.state.opacity,fontSize:this.state.fontSize,color:this.state.color,backgroundColor:this.state.backgroundColor}}>测试哈哈</p>
+             },
+             componentWillMount:function(){ //状态改变前调用
+                alert('will');
+             },
+             componentDidMount:function(){//状态改变后调用
+                 alert('did');
+                var  _this=this;
+                 window.setTimeout(function(){
+                    _this.setState({ //改变this.state值
+                       opacity:0.3,
+                       fontSize:'36px',
+                       color:'#fff',
+                       backgroundColor:'#000ss'
+                    });
+                 },1000);
+                 
+               /*  window.setTimeout(function(){
+                    this.setState({
+                       opacity:0.3,
+                       fontSize:'36px',
+                       color:'#fff',
+                       backgroundColor:'#000'
+                    });
+                 }.bind(this),1000);*/
+             }
+
+        });
+        ReactDOM.render(
+            <HelloComponent />,
+            document.getElementById("div1")
+         )
+      </script>
+</body>
+</html>

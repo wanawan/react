@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSX生成 HTML</title>
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script type="text/javascript" src="js/browser.min.js"></script>
+	<style>
+        div a{
+        	text-decoration: none;
+        	color: #f00;
+        	font-family: 微软雅黑;
+        }
+	</style>
+</head>
+<body> 
+	<div id="div1"></div>
+	    <script type="text/babel">
+	      var link=<a href="http://www.baidu.com/">去百度</a>;
+	      //var link = React.createElement('a', {href: 'http://www.baidu.com/'}, '去百度');
+          ReactDOM.render(         
+              link,
+              document.getElementById("div1")
+          	);
+   	
+    </script>
+</body>
+</html>

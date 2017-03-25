@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSX 中插入JavaScript代码</title>
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body> 
+	<div id="div1"></div>
+	    <script type="text/babel">
+	      var name='xiaogang';
+	      ReactDOM.render(
+	         //JSX中用三元运算符代替if-else
+             <h1>你的得分:{name=="xiaogang"?100:99}</h1>,
+             document.getElementById("div1")
+	      );
+   	
+        </script>
+</body>
+</html>
